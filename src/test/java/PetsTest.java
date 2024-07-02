@@ -54,8 +54,6 @@ public class PetsTest {
 
         step("Извлечение данных о животном из ответа");
         SuccessAddPet updatePets = validation.extract().as(SuccessAddPet.class);
-
-
     }
     @Order(2)
     @DisplayName("Возврат питомцев с статусом pending")
@@ -118,6 +116,5 @@ public class PetsTest {
         ValidatableResponse validation = postResponse.then()
                 .assertThat()
                 .body(matchesJsonSchemaInClasspath("petResponseSchema.json"));
-
     }
 }
